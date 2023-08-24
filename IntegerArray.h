@@ -1,25 +1,21 @@
 #pragma once
 
 #include <iostream>
+#include <ostream>
 #include <exception>
 
 
 class IntegerArray 
 {
-
 public:
 	IntegerArray() = default;
-	IntegerArray(int lenght);
-	
+	IntegerArray(const int lenght);	
 
-	~IntegerArray() 
-	{
-		delete[] array_data_;
-	};
+	~IntegerArray() {};
 
+	friend ostream &operator << (ostream &output, const IntegerArray &lenght);
 
 private:
-	int arraymassiv_;
-	int *array_data_;
+	int lenght_;
 
 };

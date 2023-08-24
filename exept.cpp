@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include "IntegerArray.h"
+
+using namespace std;
 /*
 	В данном задании, мы предлагаем вам написать контейнер данных IntegerArray — объект, 
 	который хранит целые числа и способен вычислить собственный размер во время выполнения программы.
@@ -23,7 +25,16 @@
 int main()
 {
  
+    IntegerArray arr0[5];
 
+    for (size_t i = 0; i < 5; ++i) 
+    {
+        arr0[i] = i + 1; 
+        cout << arr0[i] << endl;
+    }  
+    
+    
 
+    return 0;
 }
 
