@@ -17,9 +17,9 @@ public:
 	IntegerArray operator++(int);		
 	IntegerArray operator--(int);		
 
-	~IntegerArray() {};
+	~IntegerArray();
 
-	friend ostream &operator << (ostream &output, const IntegerArray &lenght);
+	friend std::ostream &operator << (std::ostream &output, const IntegerArray &lenght);
 
 private:
 	int lenght_;

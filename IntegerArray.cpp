@@ -19,9 +19,13 @@ IntegerArray &IntegerArray::operator--()
 	return *this;
 }
 
-
-
-ostream &operator<<(ostream &output, const IntegerArray &lenght)
+IntegerArray::~IntegerArray()
 {
+}
 
+
+std::ostream &operator<<(std::ostream &output, const IntegerArray &lenght)
+{
+	output << lenght << std::endl;
+	return output;
 }
