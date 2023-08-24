@@ -5,47 +5,30 @@
 
 IntegerArray::IntegerArray(int lenght) : lenght_(lenght)
 {
+	std::cout << "Конструктор IntegerArray(int lenght)" << std::endl;
 	massiv_ = new int[lenght] {};	
 }
 
-IntegerArray::IntegerArray(const IntegerArray &object)
-{
-	for (size_t i=0; i < lenght_; ++i) 
-	{
-		massiv_[i] = object.massiv_[i];
-	}	
-}
 
 
 IntegerArray::~IntegerArray()
 {
+	std::cout << "Дестструктор IntegerArray(int lenght)" << std::endl;
 	delete[] massiv_;
 }
 
-// инкремент
-IntegerArray &IntegerArray::operator++()
-{
-	lenght_++;
-	return *this;
-}
-IntegerArray &IntegerArray::operator--()
-{
-	lenght_--;
-	return *this;
-}
 
-IntegerArray IntegerArray::operator++(int)
+IntegerArray::IntegerArray(const IntegerArray &ptr)
 {
-	IntegerArray old(*this);
-	++(*this);
-	return old;
-}
+	lenght_ = ptr.lenght_;
+	
+	massiv_ = new int[lenght_];
+	
+	for (size_t i = 0; i < lenght_; ++i)
+	{
+		massiv_[i] = ptr.massiv_[i];
+	}
 
-IntegerArray IntegerArray::operator--(int)
-{
-	IntegerArray old(*this);
-	--(*this);
-	return old;
 }
 
 int IntegerArray::getLenght()
@@ -58,6 +41,15 @@ int &IntegerArray::operator[](int index)
 	return massiv_[index];
 }
 
+IntegerArray &IntegerArray::operator=(const IntegerArray &ptr)
+{	
+	for (size_t i = 0; i < lenght_; ++i) 
+	{
+		massiv_[i] = ptr.massiv_[i];
+	}		
+	return *this;
+}
+
 void IntegerArray::getShow()
 {
 	for (size_t i = 0; i < lenght_; i++) 
@@ -66,8 +58,4 @@ void IntegerArray::getShow()
 	}
 }
 
-int &IntArray::operator[](int index)
-{
-	return m_data[index];
 
-}

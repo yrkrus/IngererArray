@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "IntegerArray.h"
+#include <ctime>
 
 using namespace std;
 /*
@@ -12,8 +13,8 @@ using namespace std;
     Функциональность контейнера: мы предлагаем вам создать контейнер целых чисел наподобие IntArray. 
     Помимо безопасности исключений, контейнер также должен обладать функциональностью с возможностями:
 
-        создать контейнер;
-        скопировать контейнер;
+        + создать контейнер;  
+        + скопировать контейнер;
         получить доступ к любому элементу контейнера по индексу;
         изменить размер контейнера;
         вставить элемент в контейнер;
@@ -25,39 +26,36 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "");
+    srand(static_cast<unsigned int>(time(0)));
+    int random;
 
-    // Declare an array with 10 elements
-   // IntArray array(10);
-
-    // Fill the array with numbers 1 through 10
- //   for (int i{ 0 }; i < 10; ++i)
- //       array[i] = i + 1;
-
-
-//    array.Show();
-
-    //setlocale(LC_ALL, "");
-
-   const int size_array = 5;
-
-    IntegerArray arr0(size_array);
-
-    arr0.getShow();
-    //
-    // заполним данными
+    const int size_array = 5;
+    IntegerArray arr0(size_array);     
+  
+    // заполним случайными данными
     for (int i = 0; i < size_array; ++i)
     {
-        arr0[i] = i + 1;
-    }
-      
+        random = rand() % 100 - 1;
+        arr0[i] = random;
+    }     
     
-    arr0.getShow();
-
-
-  
+    cout << "arr0 до копирования" << endl;
+    arr0.getShow();  
    
-    
-    
+    IntegerArray arr1 = arr0;
+  
+    // заполним случайными данными
+    for (int i = 0; i < size_array; ++i)
+    {
+        random = rand() % 100 - 1;
+        arr0[i] = random;
+    }
+    cout << "arr0 после копирования" << endl;
+    arr0.getShow();   
+    cout << endl;
+    cout << "arr1" << endl;
+    arr1.getShow();
 
     return 0;
 }
