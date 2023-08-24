@@ -3,8 +3,11 @@
 #include "IntegerArray.h"
 
 IntegerArray::IntegerArray(int lenght) : lenght_(lenght)
-{ 
-	
+{ 	
+}
+
+IntegerArray::~IntegerArray()
+{
 }
 
 // инкремент
@@ -33,13 +36,13 @@ IntegerArray IntegerArray::operator--(int)
 	return old;
 }
 
-IntegerArray::~IntegerArray()
-{
-}
 
-
-std::ostream &operator<<(std::ostream &output, const IntegerArray &lenght)
+// вывод count
+std::ostream &operator<<(std::ostream &output, const IntegerArray &object)
 {
-	output << lenght << std::endl;
+	for (size_t i = 0; i < object.lenght_; ++i )
+	{
+		output << object.massiv_[i] << " ";
+	}
 	return output;
 }

@@ -27,12 +27,14 @@ int main()
  
     IntegerArray arr0[5];
 
+  //  IntegerArray a = 1;
+
     for (size_t i = 0; i < 5; ++i) 
     {
         arr0[i] = i + 1; 
         cout << arr0[i] << endl;
-    }  
-    
+   }  
+  //  cout << a;
     
 
     return 0;
