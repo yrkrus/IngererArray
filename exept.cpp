@@ -24,17 +24,29 @@ using namespace std;
 
 int main()
 {
- 
-    IntegerArray arr0[5];
 
-  //  IntegerArray a = 1;
+    setlocale(LC_ALL, "");
 
-    for (size_t i = 0; i < 5; ++i) 
+    const int size_array = 5;
+
+    IntegerArray arr0(size_array);
+
+    arr0.getShow();
+    
+    // заполним данными
+    for (int i = 0; i < size_array; ++i)
     {
-        arr0[i] = i + 1; 
-        cout << arr0[i] << endl;
-   }  
-  //  cout << a;
+        arr0[i] = i + 1;
+    }
+
+   
+    
+   // arr0.getShow();
+
+
+  
+   
+    
     
 
     return 0;

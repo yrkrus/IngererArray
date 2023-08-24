@@ -9,22 +9,27 @@ class IntegerArray
 {
 public:
 	IntegerArray() = default;
-	IntegerArray(const int lenght);
+	IntegerArray(int lenght);
+	IntegerArray(const IntegerArray &object);
 	~IntegerArray();
 	
 	// перегрузки инкрементов
 	IntegerArray &operator++();			
 	IntegerArray &operator--();			
 	IntegerArray operator++(int);		
-	IntegerArray operator--(int);		
+	IntegerArray operator--(int);	
+
+	int getLenght();
+
+	int &operator[](int index);
+
+	void getShow();
+
+private:
+	int lenght_ {};
+	int *massiv_{};
+
 
 	
-		
-
-protected:
-	int lenght_;
-	int *massiv_ = nullptr;
-
-	friend std::ostream &operator << (std::ostream &output, const IntegerArray &object);
 
 };

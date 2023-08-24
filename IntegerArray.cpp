@@ -2,12 +2,24 @@
 #include <ostream>
 #include "IntegerArray.h"
 
+
 IntegerArray::IntegerArray(int lenght) : lenght_(lenght)
-{ 	
+{
+	massiv_ = new int[lenght] {};	
 }
+
+IntegerArray::IntegerArray(const IntegerArray &object)
+{
+	for (size_t i=0; i < lenght_; ++i) 
+	{
+		massiv_[i] = object.massiv_[i];
+	}	
+}
+
 
 IntegerArray::~IntegerArray()
 {
+	delete[] massiv_;
 }
 
 // инкремент
@@ -36,13 +48,22 @@ IntegerArray IntegerArray::operator--(int)
 	return old;
 }
 
-
-// вывод count
-std::ostream &operator<<(std::ostream &output, const IntegerArray &object)
+int IntegerArray::getLenght()
 {
-	for (size_t i = 0; i < object.lenght_; ++i )
-	{
-		output << object.massiv_[i] << " ";
-	}
-	return output;
+	return lenght_;
 }
+
+int IntegerArray::&operator[](int index)
+{
+	return massiv_[index];
+}
+
+void IntegerArray::getShow()
+{
+	for (size_t i = 0; i < lenght_; i++) 
+	{
+		std::cout << massiv_[i] <<std::endl;
+	}
+}
+
+
