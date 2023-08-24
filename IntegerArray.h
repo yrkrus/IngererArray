@@ -19,9 +19,10 @@ public:
 
 	~IntegerArray();
 
-	friend std::ostream &operator << (std::ostream &output, const IntegerArray &lenght);
+	friend std::ostream &operator << (std::ostream &output, const IntegerArray &massiv);
 
 private:
 	int lenght_;
+	int *massiv_;
 
 };

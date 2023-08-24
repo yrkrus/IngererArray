@@ -19,6 +19,20 @@ IntegerArray &IntegerArray::operator--()
 	return *this;
 }
 
+IntegerArray IntegerArray::operator++(int)
+{
+	IntegerArray old(*this);
+	++(*this);
+	return old;
+}
+
+IntegerArray IntegerArray::operator--(int)
+{
+	IntegerArray old(*this);
+	--(*this);
+	return old;
+}
+
 IntegerArray::~IntegerArray()
 {
 }
