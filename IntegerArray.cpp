@@ -53,7 +53,7 @@ int IntegerArray::getLenght()
 	return lenght_;
 }
 
-int IntegerArray::&operator[](int index)
+int &IntegerArray::operator[](int index)
 {
 	return massiv_[index];
 }
@@ -66,4 +66,8 @@ void IntegerArray::getShow()
 	}
 }
 
+int &IntArray::operator[](int index)
+{
+	return m_data[index];
 
+}

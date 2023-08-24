@@ -22,26 +22,36 @@ using namespace std;
 
 
 
+
 int main()
 {
 
-    setlocale(LC_ALL, "");
+    // Declare an array with 10 elements
+   // IntArray array(10);
 
-    const int size_array = 5;
+    // Fill the array with numbers 1 through 10
+ //   for (int i{ 0 }; i < 10; ++i)
+ //       array[i] = i + 1;
+
+
+//    array.Show();
+
+    //setlocale(LC_ALL, "");
+
+   const int size_array = 5;
 
     IntegerArray arr0(size_array);
 
     arr0.getShow();
-    
+    //
     // заполним данными
     for (int i = 0; i < size_array; ++i)
     {
         arr0[i] = i + 1;
     }
-
-   
+      
     
-   // arr0.getShow();
+    arr0.getShow();
 
 
   
