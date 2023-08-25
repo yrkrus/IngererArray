@@ -15,9 +15,9 @@ using namespace std;
 
         + создать контейнер;  
         + скопировать контейнер;
-        получить доступ к любому элементу контейнера по индексу;
-        изменить размер контейнера;
-        вставить элемент в контейнер;
+        + получить доступ к любому элементу контейнера по индексу;
+        + изменить размер контейнера;
+        + вставить элемент в контейнер;
         удалить элемент из контейнера.
 */
 
@@ -40,7 +40,7 @@ int main()
         arr0[i] = random;
     }     
     
-    cout << "arr0 до копирования" << endl;
+     //cout << "arr0 до копирования" << endl; 
     arr0.getShow();  
    
     IntegerArray arr1 = arr0;
@@ -56,6 +56,28 @@ int main()
     cout << endl;
     cout << "arr1" << endl;
     arr1.getShow();
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
+    arr1.getData(1);
+    
+
+    cout << "arr1 lenght:" << arr1.getLenght() << endl;
+    arr1.resizeLenght(arr1.getLenght() + 1);
+ 
+    cout << "arr1 newlenght:" << arr1.getLenght() << endl;
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
+
+    cout << "втсавка элемента в массив" << endl;
+
+    arr1.insert(1, 5000);
+
+    arr1.getData(1);
 
     return 0;
 }
